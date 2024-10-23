@@ -25,5 +25,5 @@ runs:
       id: install
       run: 
         npm ci
-        echo "cache ='${{inputs.cachingInput}}'">>$GITHUB_OUTPUT
+        echo "cache ='${{inputs.cachingInput.outputs.cache-hit}}' ">>$GITHUB_OUTPUT
       shell: bash
