@@ -7,7 +7,7 @@ inputs:
     default: 'true'
 outputs:
   cachingOutput:
-    descripyion: 'Whether the cache was used or not.'
+    description: 'Whether the cache was used or not.'
     values: ${{steps.install.outputs.cache}}
 
 runs:
