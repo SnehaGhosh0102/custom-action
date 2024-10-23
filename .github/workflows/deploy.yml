@@ -5,16 +5,16 @@ on:
       - main
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
       - name: Load & Cache dependencies
-        uses: ./01 STARTING PROJECT/.github/actions/cached-deps/action.yml
+        uses: ./.github/actions/cached-deps/action.yml
       - name: Lint code
         run: npm run lint
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -38,7 +38,7 @@ jobs:
           path: test.json
   build:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -60,7 +60,7 @@ jobs:
           path: dist
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
