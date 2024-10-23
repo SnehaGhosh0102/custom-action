@@ -8,7 +8,7 @@ inputs:
 outputs:
   cachingOutput:
     description: 'Whether the cache was used or not.'
-    values: ${{steps.install.outputs.cache}}
+    value: ${{steps.install.outputs.cache}}
 
 runs:
   using: 'composite'
